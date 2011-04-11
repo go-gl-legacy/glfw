@@ -66,6 +66,7 @@ func VideoModes(max int) []*VidMode {
 
 	size := unsafe.Sizeof(vm)
 	ptr := (*C.GLFWvidmode)(C.malloc(C.size_t(size * max)))
+	defer C.free(unsafe.Pointer(ptr))
 	count := C.glfwGetVideoModes(ptr, C.int(max))
 
 	if count == 0 {
@@ -77,8 +78,6 @@ func VideoModes(max int) []*VidMode {
 		p := (*C.GLFWvidmode)(unsafe.Pointer(uintptr(unsafe.Pointer(ptr)) + uintptr(i*size)))
 		list[i] = vidModeFromPtr(p)
 	}
-
-	C.free(unsafe.Pointer(ptr))
 	return list
 }
 
