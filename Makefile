@@ -6,7 +6,7 @@ include $(GOROOT)/src/Make.inc
 
 TARG = github.com/jteeuwen/glfw
 GOFILES = constants.go
-CGOFILES = glfw.go vidmode.go image.go
+CGOFILES = glfw.go vidmode.go image.go callback.go
 CGO_CFLAGS = `pkg-config --cflags libglfw`
 CGO_LDFLAGS = `pkg-config --libs libglfw`
 

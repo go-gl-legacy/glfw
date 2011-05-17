@@ -16,9 +16,8 @@ specific APIs.
 
 This wrapper targets GLFW 2.7
 
-We do not implement the thread/mutex api. Callback functions are also not
-implemented due to difficulties with calling Go code from C.
-
+We do not implement the thread/mutex api.
+Callback functions are working.
 
 ================================================================================
  DEPENDENCIES
@@ -32,7 +31,7 @@ implemented due to difficulties with calling Go code from C.
  USAGE
 ================================================================================
 
- $ git clone https://github.com:jteeuwen/glfw.git
+ $ git clone https://github.com/jteeuwen/glfw.git
  $ cd glfw && make
 
 ================================================================================
