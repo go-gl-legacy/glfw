@@ -133,12 +133,12 @@ func GLVersion() (int, int, int) {
 	return int(major), int(minor), int(rev)
 }
 
-func LoadTexture2D(name string, flags int) int {
+func LoadTexture2D(name string, flags int) bool {
 	cn := C.CString(name)
 	defer C.free(unsafe.Pointer(cn))
-	return int(C.glfwLoadTexture2D(cn, C.int(flags)))
+	return int(C.glfwLoadTexture2D(cn, C.int(flags))) != 1
 }
 
-func LoadMemoryTexture2D(data []byte, flags int) int {
-	return int(C.glfwLoadMemoryTexture2D(unsafe.Pointer(&data), C.long(len(data)), C.int(flags)))
+func LoadMemoryTexture2D(data []byte, flags int) bool {
+	return int(C.glfwLoadMemoryTexture2D(unsafe.Pointer(&data), C.long(len(data)), C.int(flags))) != 1
 }

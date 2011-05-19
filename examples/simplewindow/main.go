@@ -14,7 +14,7 @@ import (
 func main() {
 	var err os.Error
 	if err = glfw.Init(); err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
+		fmt.Fprintf(os.Stderr, "[e] %v\n", err)
 		return
 	}
 
@@ -22,7 +22,7 @@ func main() {
 	defer glfw.Terminate()
 
 	if err = glfw.OpenWindow(300, 300, 0, 0, 0, 0, 0, 0, glfw.Windowed); err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
+		fmt.Fprintf(os.Stderr, "[e] %v\n", err)
 		return
 	}
 
@@ -36,6 +36,7 @@ func main() {
 	glfw.SetWindowTitle("Simple GLFW window")
 
 	// Hook some events to demonstrate use of callbacks.
+	// These are not necessary if you don't need them.
 	glfw.SetWindowSizeCallback(onResize)
 	glfw.SetWindowCloseCallback(onClose)
 	glfw.SetMouseButtonCallback(onMouseBtn)
@@ -43,6 +44,7 @@ func main() {
 	glfw.SetKeyCallback(onKey)
 	glfw.SetCharCallback(onChar)
 
+	// Start loop
 	running := true
 	for running {
 		// OpenGL rendering goes here.
@@ -64,22 +66,22 @@ func onResize(w, h int) {
 }
 
 func onClose() int {
-	println("closed")
+	fmt.Println("closed")
 	return 1 // return 0 to keep window open.
 }
 
 func onMouseBtn(button, state int) {
-	println("mouse button:", button, state)
+	fmt.Printf("mouse button: %d, %d\n", button, state)
 }
 
 func onMouseWheel(delta int) {
-	println("mouse wheel:", delta)
+	fmt.Printf("mouse wheel: %d\n", delta)
 }
 
 func onKey(key, state int) {
-	println("key:", key, state)
+	fmt.Printf("key: %d, %d\n", key, state)
 }
 
 func onChar(key, state int) {
-	println("char:", key, state)
+	fmt.Printf("char: %d, %d\n", key, state)
 }

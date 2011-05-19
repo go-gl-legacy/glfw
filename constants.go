@@ -212,7 +212,7 @@ const (
 // glfwReadImage/glfwLoadTexture2D flags 
 const (
 	_            = iota
-	NorescaleBit // Only for glfwReadImage
+	NoRescaleBit // Only for glfwReadImage
 	OriginUlBit
 	BuildMipmapsBit // Only for glfwLoadTexture2D
 	AlphaMapBit

@@ -8,6 +8,7 @@ all:
 	make -C nehe03
 	make -C nehe04
 	make -C nehe05
+	make -C nehe06
 
 clean:
 	make -C simplewindow clean
@@ -15,3 +16,4 @@ clean:
 	make -C nehe03 clean
 	make -C nehe04 clean
 	make -C nehe05 clean
+	make -C nehe06 clean

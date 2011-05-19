@@ -20,7 +20,7 @@ const GL_MULTISAMPLE_ARB = 0x809D
 func main() {
 	var err os.Error
 	if err = glfw.Init(); err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
+		fmt.Fprintf(os.Stderr, "[e] %v\n", err)
 		return
 	}
 
@@ -30,7 +30,7 @@ func main() {
 	glfw.OpenWindowHint(glfw.FsaaSamples, 4)
 
 	if err = glfw.OpenWindow(400, 400, 0, 0, 0, 0, 0, 0, glfw.Windowed); err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
+		fmt.Fprintf(os.Stderr, "[e] %v\n", err)
 		return
 	}
 

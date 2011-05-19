@@ -26,44 +26,44 @@ func (this *Image) Release() {
 	this.ptr = nil
 }
 
-func (this Image) Width() int {
+func (this *Image) Width() int {
 	return int(this.ptr.Width)
 }
 
-func (this Image) SetWidth(v int) {
+func (this *Image) SetWidth(v int) {
 	this.ptr.Width = C.int(v)
 }
 
-func (this Image) Height() int {
+func (this *Image) Height() int {
 	return int(this.ptr.Height)
 }
 
-func (this Image) SetHeight(v int) {
+func (this *Image) SetHeight(v int) {
 	this.ptr.Width = C.int(v)
 }
 
-func (this Image) Format() int {
+func (this *Image) Format() int {
 	return int(this.ptr.Format)
 }
 
-func (this Image) SetFormat(v int) {
+func (this *Image) SetFormat(v int) {
 	this.ptr.Format = C.int(v)
 }
 
-func (this Image) BytesPerPixel() int {
+func (this *Image) BytesPerPixel() int {
 	return int(this.ptr.BytesPerPixel)
 }
 
-func (this Image) SetBytesPerPixel(v int) {
+func (this *Image) SetBytesPerPixel(v int) {
 	this.ptr.BytesPerPixel = C.int(v)
 }
 
-func (this Image) Data() []byte {
+func (this *Image) Data() []byte {
 	size := this.ptr.BytesPerPixel * this.ptr.Width * this.ptr.Height
 	return (*(*[1<<31 - 1]byte)(unsafe.Pointer(this.ptr.Data)))[:size]
 }
 
-func (this Image) SetData(v []byte) {
+func (this *Image) SetData(v []byte) {
 	this.ptr.Data = (*_Ctype_unsignedchar)(unsafe.Pointer(&v))
 }
 

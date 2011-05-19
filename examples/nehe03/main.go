@@ -25,14 +25,14 @@ var running bool
 func main() {
 	var err os.Error
 	if err = glfw.Init(); err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
+		fmt.Fprintf(os.Stderr, "[e] %v\n", err)
 		return
 	}
 
 	defer glfw.Terminate()
 
 	if err = glfw.OpenWindow(Width, Height, 8, 8, 8, 8, 0, 8, glfw.Windowed); err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
+		fmt.Fprintf(os.Stderr, "[e] %v\n", err)
 		return
 	}
 
