@@ -4,7 +4,14 @@
 
 package glfw
 
-//#include "glue.h"
+/*
+#cgo         CFLAGS: -I/usr/local/include
+#cgo        LDFLAGS: -L/usr/local/lib -lglfw
+#cgo linux   CFLAGS: -pthread
+#cgo linux  LDFLAGS: -pthread -lX11 -lXrandr -lm -lGL
+#cgo darwin LDFLAGS: -framework Cocoa -framework OpenGL
+#include "glue.h"
+*/
 import "C"
 import (
 	"os"

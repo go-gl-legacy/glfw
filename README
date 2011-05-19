@@ -31,8 +31,7 @@ Callback functions are working.
  USAGE
 ================================================================================
 
- $ git clone https://github.com/jteeuwen/glfw.git
- $ cd glfw && make
+ $ goinstall github.com/jteeuwen/glfw
 
 ================================================================================
  LICENSE
