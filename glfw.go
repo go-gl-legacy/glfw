@@ -5,11 +5,15 @@
 package glfw
 
 /*
-#cgo         CFLAGS: -I/usr/local/include
-#cgo        LDFLAGS: -L/usr/local/lib -lglfw
-#cgo linux   CFLAGS: -pthread
-#cgo linux  LDFLAGS: -pthread -lX11 -lXrandr -lm -lGL
-#cgo darwin LDFLAGS: -framework Cocoa -framework OpenGL
+#cgo LDFLAGS: -lglfw
+
+#cgo linux CFLAGS: -I/usr/local/include -pthread
+#cgo linux LDFLAGS: -L/usr/local/lib -pthread -lX11 -lXrandr -lm -lGL
+
+#cgo darwin CFLAGS: -I/usr/local/include
+#cgo darwin LDFLAGS: -L/usr/local/lib -framework Cocoa -framework OpenGL
+
+#cgo windows LDFLAGS: -lglu32 -lopengl32
 #include "glue.h"
 */
 import "C"
