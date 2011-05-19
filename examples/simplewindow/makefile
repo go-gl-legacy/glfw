@@ -4,7 +4,7 @@
 
 include $(GOROOT)/src/Make.inc
 
-TARG = simplewindow
+TARG = app
 GOFILES = main.go
 
 include $(GOROOT)/src/Make.cmd

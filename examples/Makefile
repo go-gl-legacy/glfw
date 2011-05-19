@@ -5,7 +5,13 @@
 all:
 	make -C simplewindow
 	make -C fsaa
+	make -C nehe03
+	make -C nehe04
+	make -C nehe05
 
 clean:
 	make -C simplewindow clean
 	make -C fsaa clean
+	make -C nehe03 clean
+	make -C nehe04 clean
+	make -C nehe05 clean
