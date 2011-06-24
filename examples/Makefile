@@ -4,6 +4,7 @@
 
 all:
 	make -C simplewindow
+	make -C draw
 	make -C fsaa
 	make -C nehe03
 	make -C nehe04
@@ -14,6 +15,7 @@ all:
 
 clean:
 	make -C simplewindow clean
+	make -C draw clean
 	make -C fsaa clean
 	make -C nehe03 clean
 	make -C nehe04 clean
