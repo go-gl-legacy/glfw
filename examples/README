@@ -1,5 +1,5 @@
 This directory contains direct ports of the example applications that come
-with libglfw.
+with libglfw. Along with some NeHe tutorials.
 
 Some of these rely on Banthar's Go-OpenGL bindings at:
 https://github.com/banthar/Go-OpenGL

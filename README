@@ -2,7 +2,7 @@
  GLFW
 ================================================================================
 
-This is a set of Go bindings for GLFW.
+This is a set of Go bindings for libGLFW.
 
 GLFW is a small C library that lets you create and manage an OpenGL context and
 its associated window, enumerate and change display modes, as well as handle
@@ -25,6 +25,15 @@ Callback functions are working.
 
  libglfw - http://www.glfw.org/download.html
  
+ IMPORTANT:
+  libglfw builds/installs itself as a static library by default. This does not
+  work well with go. Eventhough the building of this package may succeed
+  without problems, any application you use it in will likely throw up a range
+  of symbol lookup errors. It is therefor strongly recommended to build libglfw
+  as a SHARED library instead. See the libglfw README and makefiles on how to
+  do this.
+
+
  For OpenGL usage in examples, use https://github.com/banthar/Go-OpenGL
 
 ================================================================================
