@@ -21,7 +21,7 @@ func main() {
 	// Ensure glfw is cleanly terminated on exit.
 	defer glfw.Terminate()
 
-	if err = glfw.OpenWindow(300, 300, 0, 0, 0, 0, 0, 0, glfw.Windowed); err != nil {
+	if err = glfw.OpenWindow(256, 256, 8, 8, 8, 0, 0, 0, glfw.Windowed); err != nil {
 		fmt.Fprintf(os.Stderr, "[e] %v\n", err)
 		return
 	}

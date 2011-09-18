@@ -27,8 +27,8 @@ const (
 )
 
 const (
-	_      = iota
-	KeyEsc = (KeySpecial + iota)
+	_ = (KeySpecial + iota)
+	KeyEsc
 	KeyF1
 	KeyF2
 	KeyF3
@@ -144,7 +144,7 @@ const (
 	Fullscreen
 )
 
-// glfwGetWindowParam tokens
+// glfwGetWindowParam / glfwOpenWindowHint tokens
 const (
 	_ = 0x00020000 + iota
 	Opened
