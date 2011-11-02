@@ -7,8 +7,8 @@ package glfw
 //#include "glue.h"
 import "C"
 import (
+	"errors"
 	"unsafe"
-	"os"
 )
 
 // LoadTexture2D reads an image from the file specified by the parameter name
@@ -88,14 +88,14 @@ type Image struct {
 // Note: ReadImage supports the Truevision Targa version 1 file format
 // (.TGA). Supported pixel formats are: 8-bit gray scale, 8-bit paletted
 // (24/32-bit color), 24-bit true color and 32-bit true color + alpha.
-func ReadImage(name string, flags int) (i *Image, err os.Error) {
+func ReadImage(name string, flags int) (i *Image, err error) {
 	i = new(Image)
 
 	str := C.CString(name)
 	defer C.free(unsafe.Pointer(str))
 
 	if C.glfwReadImage(str, &i.img, C.int(flags)) != 1 {
-		return nil, os.NewError("Failed to read image " + name)
+		return nil, errors.New("Failed to read image " + name)
 	}
 
 	return
@@ -107,15 +107,15 @@ func ReadImage(name string, flags int) (i *Image, err os.Error) {
 // Note: ReadMemoryImage supports the Truevision Targa version 1 file format
 // (.TGA). Supported pixel formats are: 8-bit gray scale, 8-bit paletted
 // (24/32-bit color), 24-bit true color and 32-bit true color + alpha.
-func ReadMemoryImage(data []byte, flags int) (i *Image, err os.Error) {
+func ReadMemoryImage(data []byte, flags int) (i *Image, err error) {
 	if len(data) == 0 {
-		return nil, os.NewError("No image data was supplied")
+		return nil, errors.New("No image data was supplied")
 	}
 
 	i = new(Image)
 
 	if C.glfwReadMemoryImage(unsafe.Pointer(&data[0]), C.long(len(data)), &i.img, C.int(flags)) != 1 {
-		return nil, os.NewError("Failed to read image from memory")
+		return nil, errors.New("Failed to read image from memory")
 	}
 
 	return

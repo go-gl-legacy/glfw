@@ -18,7 +18,7 @@ import (
 const GL_MULTISAMPLE_ARB = 0x809D
 
 func main() {
-	var err os.Error
+	var err error
 	if err = glfw.Init(); err != nil {
 		fmt.Fprintf(os.Stderr, "[e] %v\n", err)
 		return

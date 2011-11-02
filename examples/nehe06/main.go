@@ -7,6 +7,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"gl"
@@ -30,7 +31,7 @@ var (
 )
 
 func main() {
-	var err os.Error
+	var err error
 	if err = glfw.Init(); err != nil {
 		fmt.Fprintf(os.Stderr, "[e] %v\n", err)
 		return
@@ -83,7 +84,7 @@ func onKey(key, state int) {
 	}
 }
 
-func initGL() (err os.Error) {
+func initGL() (err error) {
 	if err = loadTextures(); err != nil {
 		return
 	}
@@ -103,7 +104,7 @@ func destroyGL() {
 	textures = nil
 }
 
-func loadTextures() (err os.Error) {
+func loadTextures() (err error) {
 	textures = make([]gl.Texture, len(texturefiles))
 	gl.GenTextures(textures)
 
@@ -111,7 +112,7 @@ func loadTextures() (err os.Error) {
 		textures[i].Bind(gl.TEXTURE_2D)
 
 		if glfw.LoadTexture2D(texturefiles[i], 0) {
-			return os.NewError("Failed to load texture: " + texturefiles[i])
+			return errors.New("Failed to load texture: " + texturefiles[i])
 		}
 
 		gl.TexParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)

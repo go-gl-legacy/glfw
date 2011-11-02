@@ -13,15 +13,15 @@ package glfw
 //#include "glue.h"
 import "C"
 import (
-	"os"
+	"errors"
 	"unsafe"
 )
 
 // Init initializes GLFW. No other GLFW functions may be called before this
 // function has succeeded.
-func Init() (err os.Error) {
+func Init() (err error) {
 	if C.glfwInit() != 1 {
-		err = os.NewError("Failed to initialize GLFW")
+		err = errors.New("Failed to initialize GLFW")
 	}
 	return
 }
@@ -98,13 +98,13 @@ func OpenWindowHint(target, hint int) { C.glfwOpenWindowHint(C.int(target), C.in
 //              entire screen. When glfw.Fullscreen is selected, the video mode
 //              will be changed to the resolution that closest matches the width
 //              and height parameters.
-func OpenWindow(width, height, r, g, b, a, depth, stencil, mode int) (err os.Error) {
+func OpenWindow(width, height, r, g, b, a, depth, stencil, mode int) (err error) {
 	if C.glfwOpenWindow(
 		C.int(width), C.int(height),
 		C.int(r), C.int(g), C.int(b), C.int(a),
 		C.int(depth), C.int(stencil), C.int(mode),
 	) != 1 {
-		err = os.NewError("Failed to open window")
+		err = errors.New("Failed to open window")
 	}
 	return
 }

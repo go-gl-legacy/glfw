@@ -23,7 +23,7 @@ const (
 var running bool
 
 func main() {
-	var err os.Error
+	var err error
 	if err = glfw.Init(); err != nil {
 		fmt.Fprintf(os.Stderr, "[e] %v\n", err)
 		return
