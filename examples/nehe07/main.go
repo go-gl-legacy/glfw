@@ -9,10 +9,10 @@ package main
 import (
 	"errors"
 	"fmt"
-	"os"
+	"github.com/jteeuwen/glfw"
 	"gl"
 	"gl/glu"
-	"github.com/jteeuwen/glfw"
+	"os"
 )
 
 const (

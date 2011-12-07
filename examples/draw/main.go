@@ -6,10 +6,10 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"math"
-	"gl"
 	"github.com/jteeuwen/glfw"
+	"gl"
+	"math"
+	"os"
 )
 
 var (

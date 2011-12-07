@@ -9,10 +9,10 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"github.com/jteeuwen/glfw"
 	"gl"
 	"gl/glu"
+	"os"
 )
 
 const GL_MULTISAMPLE_ARB = 0x809D
