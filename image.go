@@ -4,7 +4,8 @@
 
 package glfw
 
-//#include "glue.h"
+//#include <stdlib.h>
+//#include <GL/glfw.h>
 import "C"
 import (
 	"errors"

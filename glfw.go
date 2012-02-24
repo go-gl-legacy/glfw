@@ -10,7 +10,8 @@ package glfw
 //#cgo  darwin  CFLAGS: -I/usr/local/include
 //#cgo  darwin LDFLAGS: -L/usr/local/lib -framework Cocoa -framework OpenGL
 //#cgo windows LDFLAGS: -lglu32 -lopengl32
-//#include "glue.h"
+//#include <stdlib.h>
+//#include <GL/glfw.h>
 import "C"
 import (
 	"errors"

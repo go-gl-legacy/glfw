@@ -4,25 +4,7 @@
 
 package glfw
 
-//#include "glue.h"
-//
-// extern void goWindowSizeCB(int, int);
-// extern int  goWindowCloseCB(void);
-// extern void goWindowRefreshCB(void);
-// extern void goMouseButtonCB(int, int);
-// extern void goMousePosCB(int, int);
-// extern void goMouseWheelCB(int);
-// extern void goKeyCB(int, int);
-// extern void goCharCB(int, int);
-//
-// void setWindowSizeCB()    { glfwSetWindowSizeCallback(goWindowSizeCB); }
-// void setWindowCloseCB()   { glfwSetWindowCloseCallback(goWindowCloseCB); }
-// void setWindowRefreshCB() { glfwSetWindowRefreshCallback(goWindowRefreshCB); }
-// void setMouseButtonCB()   { glfwSetMouseButtonCallback(goMouseButtonCB); }
-// void setMousePosCB()      { glfwSetMousePosCallback(goMousePosCB); }
-// void setMouseWheelCB()    { glfwSetMouseWheelCallback(goMouseWheelCB); }
-// void setKeyCB()           { glfwSetKeyCallback(goKeyCB); }
-// void setCharCB()          { glfwSetCharCallback(goCharCB); }
+//#include "callback.h"
 import "C"
 
 // =============================================================================
