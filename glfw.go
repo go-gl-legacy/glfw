@@ -6,7 +6,7 @@ package glfw
 
 //#cgo         LDFLAGS: -lglfw
 //#cgo   linux  CFLAGS: -I/usr/local/include -pthread
-//#cgo   linux LDFLAGS: -L/usr/local/lib -pthread -lX11 -lXrandr -lm -lGL
+//#cgo   linux LDFLAGS: -L/usr/local/lib -pthread -lX11 -lXrandr -lm -lGL -lrt
 //#cgo  darwin  CFLAGS: -I/usr/local/include
 //#cgo  darwin LDFLAGS: -L/usr/local/lib -framework Cocoa -framework OpenGL
 //#cgo windows LDFLAGS: -lglu32 -lopengl32
