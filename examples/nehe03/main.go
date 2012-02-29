@@ -9,8 +9,8 @@ package main
 import (
 	"fmt"
 	"github.com/jteeuwen/glfw"
-	"gl"
-	"gl/glu"
+	"github.com/banthar/gl"
+	"github.com/banthar/glu"
 	"os"
 )
 

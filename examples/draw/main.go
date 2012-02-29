@@ -7,7 +7,7 @@ package main
 import (
 	"fmt"
 	"github.com/jteeuwen/glfw"
-	"gl"
+	"github.com/banthar/gl"
 	"math"
 	"os"
 )
