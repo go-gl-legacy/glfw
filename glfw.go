@@ -228,7 +228,7 @@ func PollEvents() { C.glfwPollEvents() }
 // glfw.WaitEvents will return.
 func WaitEvents() { C.glfwWaitEvents() }
 
-// Key returns glfw.Pressed if the given key is held down, or glfw.Released
+// Key returns glfw.KeyPress if the given key is held down, or glfw.KeyRelease
 // otherwise.
 // 
 // Note: Not all key codes are supported on all systems. Also, while some keys
@@ -239,8 +239,8 @@ func WaitEvents() { C.glfwWaitEvents() }
 // modifier keys (shift, alt and control), the left version is used (e.g. glfw.KeyLshift).
 func Key(key int) int { return int(C.glfwGetKey(C.int(key))) }
 
-// MouseButton returns glfw.Pressed if the given mouse button is held down.
-// glfw.Released otherwise.
+// MouseButton returns glfw.KeyPress if the given mouse button is held down.
+// glfw.KeyRelease otherwise.
 func MouseButton(btn int) int { return int(C.glfwGetMouseButton(C.int(btn))) }
 
 // MousePos returns the current mouse position. If the cursor is not hidden,
@@ -297,11 +297,11 @@ func JoystickPos(joy int, axes []float32) int {
 // JoystickButtons queries the current state of one or more buttons of a joystick.
 // The button states are returned in an array, where the first element
 // represents the first button of the joystick. Each state can be either
-// glfw.Pressed or glfw.Released.
+// glfw.KeyPress or glfw.KeyRelease.
 //
 // Note: If len(buttons) exceeds the number of buttons supported by the joystick,
 // or if the joystick is not available, the unused elements in the buttons array
-// will be set to glfw.Released.
+// will be set to glfw.KeyRelease.
 //
 // Note: The function returns the number of actually returned buttons. This is
 // the minimum of len(buttons) and the number of buttons supported by the
