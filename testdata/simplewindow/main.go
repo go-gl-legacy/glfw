@@ -62,7 +62,7 @@ func main() {
 }
 
 func onResize(w, h int) {
-	println("resized:", w, h)
+	fmt.Printf("resized: %dx%d\n", w, h)
 }
 
 func onClose() int {
