@@ -6,6 +6,9 @@
 #define _CALLBACK_H_
 
 #include <stdlib.h>
+#ifdef _WIN32
+  #define GLFW_DLL
+#endif
 #include <GL/glfw.h>
 
 extern void goWindowSizeCB(int, int);
