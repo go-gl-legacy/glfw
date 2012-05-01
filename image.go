@@ -37,7 +37,7 @@ import (
 func LoadTexture2D(name string, flags int) bool {
 	cn := C.CString(name)
 	defer C.free(unsafe.Pointer(cn))
-	return int(C.glfwLoadTexture2D(cn, C.int(flags))) != 1
+	return int(C.glfwLoadTexture2D(cn, C.int(flags))) == 1
 }
 
 // LoadMemoryTexture2D reads an image from the memory buffer specified by the
@@ -66,7 +66,7 @@ func LoadMemoryTexture2D(data []byte, flags int) bool {
 	}
 
 	return int(C.glfwLoadMemoryTexture2D(
-		unsafe.Pointer(&data[0]), C.long(len(data)), C.int(flags))) != 1
+		unsafe.Pointer(&data[0]), C.long(len(data)), C.int(flags))) == 1
 }
 
 // The Image type holds data for loaded images.
@@ -145,7 +145,7 @@ func ReadMemoryImage(data []byte, flags int) (i *Image, err error) {
 // (.TGA). Supported pixel formats are: 8-bit gray scale, 8-bit paletted
 // (24/32-bit color), 24-bit true color and 32-bit true color + alpha.
 func (i *Image) LoadTextureImage2D(flags int) bool {
-	return int(C.glfwLoadTextureImage2D(&i.img, C.int(flags))) != 1
+	return int(C.glfwLoadTextureImage2D(&i.img, C.int(flags))) == 1
 }
 
 // Release frees any memory occupied by a loaded image, and clears all the

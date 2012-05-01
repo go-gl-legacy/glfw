@@ -409,7 +409,7 @@ func DesktopMode() *VidMode {
 func ExtensionSupported(name string) bool {
 	cs := C.CString(name)
 	defer C.free(unsafe.Pointer(cs))
-	return C.glfwExtensionSupported(cs) != 1
+	return C.glfwExtensionSupported(cs) == 1
 }
 
 // ProcAddress acquires the pointer to an OpenGL extension function. Some
