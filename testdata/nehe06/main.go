@@ -111,7 +111,7 @@ func loadTextures() (err error) {
 	for i := range texturefiles {
 		textures[i].Bind(gl.TEXTURE_2D)
 
-		if glfw.LoadTexture2D(texturefiles[i], 0) {
+		if !glfw.LoadTexture2D(texturefiles[i], 0) {
 			return errors.New("Failed to load texture: " + texturefiles[i])
 		}
 

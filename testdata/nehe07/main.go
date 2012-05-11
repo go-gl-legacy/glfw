@@ -146,7 +146,7 @@ func loadTextures() (err error) {
 	// Texture 1
 	textures[0].Bind(gl.TEXTURE_2D)
 
-	if glfw.LoadTexture2D(texturefile, 0) {
+	if !glfw.LoadTexture2D(texturefile, 0) {
 		return errors.New("Failed to load texture: " + texturefile)
 	}
 
@@ -156,7 +156,7 @@ func loadTextures() (err error) {
 	// Texture 2
 	textures[1].Bind(gl.TEXTURE_2D)
 
-	if glfw.LoadTexture2D(texturefile, 0) {
+	if !glfw.LoadTexture2D(texturefile, 0) {
 		return errors.New("Failed to load texture: " + texturefile)
 	}
 
@@ -166,7 +166,7 @@ func loadTextures() (err error) {
 	// Texture 3
 	textures[2].Bind(gl.TEXTURE_2D)
 
-	if glfw.LoadTexture2D(texturefile, glfw.BuildMipmapsBit) {
+	if !glfw.LoadTexture2D(texturefile, glfw.BuildMipmapsBit) {
 		return errors.New("Failed to load texture: " + texturefile)
 	}
 
