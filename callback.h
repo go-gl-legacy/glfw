@@ -11,6 +11,15 @@
 #endif
 #include <GL/glfw.h>
 
+void GLFWCALL windowSizeCallback(int, int);
+int GLFWCALL windowCloseCallback(void);
+void GLFWCALL windowRefreshCallback(void);
+void GLFWCALL mouseButtonCallback(int, int);
+void GLFWCALL mousePosCallback(int, int);
+void GLFWCALL mouseWheelCallback(int);
+void GLFWCALL keyCallback(int, int);
+void GLFWCALL charCallback(int, int);
+
 extern void goWindowSizeCB(int, int);
 extern int  goWindowCloseCB(void);
 extern void goWindowRefreshCB(void);
