@@ -4,42 +4,74 @@
 
 #include "callback.h"
 
+void GLFWCALL windowSizeCallback(int width, int height) {
+    goWindowSizeCB(width, height);
+}
+
+int GLFWCALL windowCloseCallback() {
+    goWindowCloseCB();
+}
+
+void GLFWCALL windowRefreshCallback() {
+    goWindowRefreshCB();
+}
+
+void GLFWCALL mouseButtonCallback(int button, int action) {
+    goMouseButtonCB(button, action);
+}
+
+void GLFWCALL mousePosCallback(int x, int y) {
+    goMousePosCB(x, y);
+}
+
+void GLFWCALL mouseWheelCallback(int pos) {
+    goMouseWheelCB(pos);
+}
+
+void GLFWCALL keyCallback(int key, int action) {
+    goKeyCB(key, action);
+}
+
+void GLFWCALL charCallback(int character, int action) {
+    goCharCB(character, action);
+}
+
 void setWindowSizeCB()
 {
-	glfwSetWindowSizeCallback(goWindowSizeCB);
+	glfwSetWindowSizeCallback(windowSizeCallback);
 }
 
 void setWindowCloseCB()
 {
-	glfwSetWindowCloseCallback(goWindowCloseCB);
+	glfwSetWindowCloseCallback(windowCloseCallback);
 }
 
 void setWindowRefreshCB()
 {
-	glfwSetWindowRefreshCallback(goWindowRefreshCB);
+	glfwSetWindowRefreshCallback(windowRefreshCallback);
 }
 
 void setMouseButtonCB()
 {
-	glfwSetMouseButtonCallback(goMouseButtonCB);
+	glfwSetMouseButtonCallback(mouseButtonCallback);
 }
 
 void setMousePosCB()
 {
-	glfwSetMousePosCallback(goMousePosCB);
+	glfwSetMousePosCallback(mousePosCallback);
 }
 
 void setMouseWheelCB()
 {
-	glfwSetMouseWheelCallback(goMouseWheelCB);
+	glfwSetMouseWheelCallback(mouseWheelCallback);
 }
 
 void setKeyCB()
 {
-	glfwSetKeyCallback(goKeyCB);
+	glfwSetKeyCallback(keyCallback);
 }
 
 void setCharCB()
 {
-	glfwSetCharCallback(goCharCB);
+	glfwSetCharCallback(charCallback);
 }
