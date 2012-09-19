@@ -35,7 +35,7 @@ var windowClose WindowCloseHandler
 
 //export goWindowCloseCB
 func goWindowCloseCB() C.int {
-	if goWindowCloseCB == nil {
+	if windowClose == nil {
 		return 0
 	}
 	return C.int(windowClose())
