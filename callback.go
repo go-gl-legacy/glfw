@@ -75,19 +75,19 @@ func SetWindowRefreshCallback(f WindowRefreshHandler) {
 
 type MouseButtonHandler func(button, state int)
 
-var mouseButton MouseButtonHandler
+var mouseButton []MouseButtonHandler
 
 //export goMouseButtonCB
 func goMouseButtonCB(button, state C.int) {
-	if mouseButton == nil {
-		return
+	for _, f := range mouseButton {
+		f(int(button), int(state))
 	}
-	mouseButton(int(button), int(state))
 }
 
 // SetMouseButtonCallback sets the callback for mouse button events.
+// There can be more than one handler.
 func SetMouseButtonCallback(f MouseButtonHandler) {
-	mouseButton = f
+	mouseButton = append(mouseButton, f)
 	C.setMouseButtonCB()
 }
 
@@ -95,19 +95,19 @@ func SetMouseButtonCallback(f MouseButtonHandler) {
 
 type MousePosHandler func(x, y int)
 
-var mousePos MousePosHandler
+var mousePos []MousePosHandler
 
 //export goMousePosCB
 func goMousePosCB(x, y C.int) {
-	if mousePos == nil {
-		return
+	for _, f := range mousePos {
+		f(int(x), int(y))
 	}
-	mousePos(int(x), int(y))
 }
 
-// SetMousePosCallback sets the callback for mouse motion events.
+// SetMousePosCallback sets a callback for mouse motion events.
+// There can be more than one handler.
 func SetMousePosCallback(f MousePosHandler) {
-	mousePos = f
+	mousePos = append(mousePos, f)
 	C.setMousePosCB()
 }
 
@@ -115,19 +115,19 @@ func SetMousePosCallback(f MousePosHandler) {
 
 type MouseWheelHandler func(delta int)
 
-var mouseWheel MouseWheelHandler
+var mouseWheel []MouseWheelHandler
 
 //export goMouseWheelCB
 func goMouseWheelCB(delta C.int) {
-	if mouseWheel == nil {
-		return
+	for _, f := range mouseWheel {
+		f(int(delta))
 	}
-	mouseWheel(int(delta))
 }
 
 // This function sets the callback for mouse wheel events.
+// There can be more than one handler.
 func SetMouseWheelCallback(f MouseWheelHandler) {
-	mouseWheel = f
+	mouseWheel = append(mouseWheel, f)
 	C.setMouseWheelCB()
 }
 
@@ -135,22 +135,23 @@ func SetMouseWheelCallback(f MouseWheelHandler) {
 
 type KeyHandler func(key, state int)
 
-var key KeyHandler
+var key []KeyHandler
 
 //export goKeyCB
 func goKeyCB(k, state C.int) {
-	if key == nil {
-		return
+	for _, f := range key {
+		f(int(k), int(state))
 	}
-	key(int(k), int(state))
 }
 
 // SetKeyCallback sets the callback for keyboard key events. The callback
 // function is called every time the state of a single key is changed (from
 // released to pressed or vice versa). The reported keys are unaffected by any
 // modifiers (such as shift or alt) and each modifier is reported as a separate key.
+//
+// There can be more than one handler.
 func SetKeyCallback(f KeyHandler) {
-	key = f
+	key = append(key, f)
 	C.setKeyCB()
 }
 
@@ -158,14 +159,13 @@ func SetKeyCallback(f KeyHandler) {
 
 type CharHandler func(int, int)
 
-var char CharHandler
+var char []CharHandler
 
 //export goCharCB
 func goCharCB(x, y C.int) {
-	if char == nil {
-		return
+	for _, f := range char {
+		f(int(x), int(y))
 	}
-	char(int(x), int(y))
 }
 
 // SetCharCallback sets the callback for keyboard character events. The callback
@@ -173,6 +173,6 @@ func goCharCB(x, y C.int) {
 // character is pressed or released. Characters are affected by modifiers
 // (such as shift or alt).
 func SetCharCallback(f CharHandler) {
-	char = f
+	char = append(char, f)
 	C.setCharCB()
 }
