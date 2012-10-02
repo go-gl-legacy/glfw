@@ -83,7 +83,7 @@ const (
 	KeyKP7
 	KeyKP8
 	KeyKP9
-	KeyKPDidivde
+	KeyKPDivide
 	KeyKPMultiply
 	KeyKPSubtract
 	KeyKPAdd
