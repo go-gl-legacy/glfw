@@ -31,7 +31,12 @@ do this.
 For OpenGL usage in examples, use banthar's OpenGL bindings:
 
     go get github.com/banthar/gl
-    go get github.com/banthar/glu
+    go get github.com/go-gl/glu
+
+
+### Usage
+
+    go get github.com/go-gl/glfw
 
 
 ### License
