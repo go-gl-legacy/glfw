@@ -8,9 +8,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/jteeuwen/glfw"
 	"github.com/banthar/gl"
-	"github.com/banthar/glu"
+	"github.com/go-gl/glfw"
+	"github.com/go-gl/glu"
 	"os"
 )
 

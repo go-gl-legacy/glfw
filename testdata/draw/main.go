@@ -6,8 +6,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/jteeuwen/glfw"
 	"github.com/banthar/gl"
+	"github.com/go-gl/glfw"
 	"math"
 	"os"
 )
