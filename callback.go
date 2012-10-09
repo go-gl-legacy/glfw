@@ -24,7 +24,7 @@ func goWindowSizeCB(width, height C.int) {
 // SetWindowSizeCallback sets the callback for window size change events.
 func SetWindowSizeCallback(f WindowSizeHandler) {
 	windowSize = f
-	C.setWindowSizeCB()
+	C.glfwSetWindowSizeCB()
 }
 
 // =============================================================================
@@ -45,7 +45,7 @@ func goWindowCloseCB() C.int {
 // A window has to be opened for this function to have any effect.
 func SetWindowCloseCallback(f WindowCloseHandler) {
 	windowClose = f
-	C.setWindowCloseCB()
+	C.glfwSetWindowCloseCB()
 }
 
 // =============================================================================
@@ -68,7 +68,7 @@ func goWindowRefreshCB() {
 // occluded by another window has become visible).
 func SetWindowRefreshCallback(f WindowRefreshHandler) {
 	windowRefresh = f
-	C.setWindowRefreshCB()
+	C.glfwSetWindowRefreshCB()
 }
 
 // =============================================================================
@@ -88,7 +88,7 @@ func goMouseButtonCB(button, state C.int) {
 // There can be more than one handler.
 func SetMouseButtonCallback(f MouseButtonHandler) {
 	mouseButton = append(mouseButton, f)
-	C.setMouseButtonCB()
+	C.glfwSetMouseButtonCB()
 }
 
 // =============================================================================
@@ -108,7 +108,7 @@ func goMousePosCB(x, y C.int) {
 // There can be more than one handler.
 func SetMousePosCallback(f MousePosHandler) {
 	mousePos = append(mousePos, f)
-	C.setMousePosCB()
+	C.glfwSetMousePosCB()
 }
 
 // =============================================================================
@@ -128,7 +128,7 @@ func goMouseWheelCB(delta C.int) {
 // There can be more than one handler.
 func SetMouseWheelCallback(f MouseWheelHandler) {
 	mouseWheel = append(mouseWheel, f)
-	C.setMouseWheelCB()
+	C.glfwSetMouseWheelCB()
 }
 
 // =============================================================================
@@ -152,7 +152,7 @@ func goKeyCB(k, state C.int) {
 // There can be more than one handler.
 func SetKeyCallback(f KeyHandler) {
 	key = append(key, f)
-	C.setKeyCB()
+	C.glfwSetKeyCB()
 }
 
 // =============================================================================
@@ -174,5 +174,5 @@ func goCharCB(x, y C.int) {
 // (such as shift or alt).
 func SetCharCallback(f CharHandler) {
 	char = append(char, f)
-	C.setCharCB()
+	C.glfwSetCharCB()
 }

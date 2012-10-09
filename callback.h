@@ -11,14 +11,14 @@
 #endif
 #include <GL/glfw.h>
 
-void GLFWCALL windowSizeCallback(int, int);
-int GLFWCALL windowCloseCallback(void);
-void GLFWCALL windowRefreshCallback(void);
-void GLFWCALL mouseButtonCallback(int, int);
-void GLFWCALL mousePosCallback(int, int);
-void GLFWCALL mouseWheelCallback(int);
-void GLFWCALL keyCallback(int, int);
-void GLFWCALL charCallback(int, int);
+void GLFWCALL glfwWindowSizeCB(int, int);
+int  GLFWCALL glfwWindowCloseCB(void);
+void GLFWCALL glfwWindowRefreshCB(void);
+void GLFWCALL glfwMouseButtonCB(int, int);
+void GLFWCALL glfwMousePosCB(int, int);
+void GLFWCALL glfwMouseWheelCB(int);
+void GLFWCALL glfwKeyCB(int, int);
+void GLFWCALL glfwCharCB(int, int);
 
 extern void goWindowSizeCB(int, int);
 extern int  goWindowCloseCB(void);
@@ -29,13 +29,13 @@ extern void goMouseWheelCB(int);
 extern void goKeyCB(int, int);
 extern void goCharCB(int, int);
 
-void setWindowSizeCB();
-void setWindowCloseCB();
-void setWindowRefreshCB();
-void setMouseButtonCB();
-void setMousePosCB();
-void setMouseWheelCB();
-void setKeyCB();
-void setCharCB();
+void glfwSetWindowSizeCB(void);
+void glfwSetWindowCloseCB(void);
+void glfwSetWindowRefreshCB(void);
+void glfwSetMouseButtonCB(void);
+void glfwSetMousePosCB(void);
+void glfwSetMouseWheelCB(void);
+void glfwSetKeyCB(void);
+void glfwSetCharCB(void);
 
 #endif // _CALLBACK_H_
