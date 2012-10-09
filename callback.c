@@ -4,74 +4,74 @@
 
 #include "callback.h"
 
-void GLFWCALL windowSizeCallback(int width, int height) {
+void GLFWCALL glfwWindowSizeCB (int width, int height) {
     goWindowSizeCB(width, height);
 }
 
-int GLFWCALL windowCloseCallback() {
+int GLFWCALL glfwWindowCloseCB (void) {
     goWindowCloseCB();
 }
 
-void GLFWCALL windowRefreshCallback() {
+void GLFWCALL glfwWindowRefreshCB (void) {
     goWindowRefreshCB();
 }
 
-void GLFWCALL mouseButtonCallback(int button, int action) {
+void GLFWCALL glfwMouseButtonCB (int button, int action) {
     goMouseButtonCB(button, action);
 }
 
-void GLFWCALL mousePosCallback(int x, int y) {
+void GLFWCALL glfwMousePosCB (int x, int y) {
     goMousePosCB(x, y);
 }
 
-void GLFWCALL mouseWheelCallback(int pos) {
+void GLFWCALL glfwMouseWheelCB (int pos) {
     goMouseWheelCB(pos);
 }
 
-void GLFWCALL keyCallback(int key, int action) {
+void GLFWCALL glfwKeyCB (int key, int action) {
     goKeyCB(key, action);
 }
 
-void GLFWCALL charCallback(int character, int action) {
+void GLFWCALL glfwCharCB (int character, int action) {
     goCharCB(character, action);
 }
 
-void setWindowSizeCB()
+void glfwSetWindowSizeCB (void)
 {
-	glfwSetWindowSizeCallback(windowSizeCallback);
+	glfwSetWindowSizeCallback(glfwWindowSizeCB);
 }
 
-void setWindowCloseCB()
+void glfwSetWindowCloseCB (void)
 {
-	glfwSetWindowCloseCallback(windowCloseCallback);
+	glfwSetWindowCloseCallback(glfwWindowCloseCB);
 }
 
-void setWindowRefreshCB()
+void glfwSetWindowRefreshCB (void)
 {
-	glfwSetWindowRefreshCallback(windowRefreshCallback);
+	glfwSetWindowRefreshCallback(glfwWindowRefreshCB);
 }
 
-void setMouseButtonCB()
+void glfwSetMouseButtonCB (void)
 {
-	glfwSetMouseButtonCallback(mouseButtonCallback);
+	glfwSetMouseButtonCallback(glfwMouseButtonCB);
 }
 
-void setMousePosCB()
+void glfwSetMousePosCB (void)
 {
-	glfwSetMousePosCallback(mousePosCallback);
+	glfwSetMousePosCallback(glfwMousePosCB);
 }
 
-void setMouseWheelCB()
+void glfwSetMouseWheelCB (void)
 {
-	glfwSetMouseWheelCallback(mouseWheelCallback);
+	glfwSetMouseWheelCallback(glfwMouseWheelCB);
 }
 
-void setKeyCB()
+void glfwSetKeyCB (void)
 {
-	glfwSetKeyCallback(keyCallback);
+	glfwSetKeyCallback(glfwKeyCB);
 }
 
-void setCharCB()
+void glfwSetCharCB (void)
 {
-	glfwSetCharCallback(charCallback);
+	glfwSetCharCallback(glfwCharCB);
 }
