@@ -28,11 +28,6 @@ of symbol lookup errors. It is therefor strongly recommended to build libglfw
 as a SHARED library instead. See the libglfw README and makefiles on how to
 do this.
 
-For OpenGL usage in examples, use banthar's OpenGL bindings:
-
-    go get github.com/banthar/gl
-    go get github.com/go-gl/glu
-
 
 ### Usage
 
