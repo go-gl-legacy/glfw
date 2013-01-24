@@ -113,14 +113,14 @@ func SetMousePosCallback(f MousePosHandler) {
 
 // =============================================================================
 
-type MouseWheelHandler func(delta int)
+type MouseWheelHandler func(pos int)
 
 var mouseWheel []MouseWheelHandler
 
 //export goMouseWheelCB
-func goMouseWheelCB(delta C.int) {
+func goMouseWheelCB(pos C.int) {
 	for _, f := range mouseWheel {
-		f(int(delta))
+		f(int(pos))
 	}
 }
 
