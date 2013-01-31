@@ -160,13 +160,11 @@ func (i *Image) SetWidth(v int) { i.img.Width = C.int(v) }
 
 func (i *Image) Height() int { return int(i.img.Height) }
 
-func (i *Image) SetHeight(v int) { i.img.Width = C.int(v) }
+func (i *Image) SetHeight(v int) { i.img.Height = C.int(v) }
 
 // Format specifies an OpenGL pixel format, which can be GL_LUMINANCE or
 // GL_ALPHA (for gray scale images), GL_RGB or GL_RGBA.
-func (i *Image) Format() int {
-	return int(i.img.Format)
-}
+func (i *Image) Format() int { return int(i.img.Format) }
 
 func (i *Image) SetFormat(v int) { i.img.Format = C.int(v) }
 
