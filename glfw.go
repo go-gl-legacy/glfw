@@ -349,7 +349,7 @@ func Sleep(t float64) { C.glfwSleep(C.double(t)) }
 // SystemKeys, KeyRepeat, AutoPollEvents
 func Enable(token int) { C.glfwEnable(C.int(token)) }
 
-// Disable is used to diusable a certain feature.
+// Disable is used to disable a certain feature.
 //
 // Supported tokens are: MouseCursor, StickyKeys, StickyMouseButtons,
 // SystemKeys, KeyRepeat, AutoPollEvents
