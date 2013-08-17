@@ -9,6 +9,8 @@ package glfw
 //#cgo  darwin  CFLAGS: -I/usr/local/include
 //#cgo  darwin LDFLAGS: -L/usr/local/lib -framework Cocoa -framework OpenGL -framework IOKit -lglfw
 //#cgo windows LDFLAGS: -lglu32 -lopengl32 -lglfwdll
+//#cgo freebsd  CFLAGS: -I/usr/local/include
+//#cgo freebsd LDFLAGS: -L/usr/local/lib -lglfw
 //#include <stdlib.h>
 //#ifdef _WIN32
 //  #define GLFW_DLL
