@@ -46,13 +46,13 @@ func Terminate() { C.glfwTerminate() }
 //     AccumBlueBits:  Number of bits for the blue channel of the accumulation buffer.
 //     AccumAlphaBits: Number of bits for the alpha channel of the accumulation buffer.
 //     AuxBuffers:     Number of auxiliary buffers.
-//     Stereo:         Specify if stereo rendering should be supported (can be 
+//     Stereo:         Specify if stereo rendering should be supported (can be
 //                     GL_TRUE or GL_FALSE).
 //     WindowNoResize: Specify whether the window can be resized by the user
 //                     (not used for fullscreen windows)
 //     FsaaSamples:    Number of samples to use for the multisampling buffer.
 //                     Zero disables multisampling.
-//     
+//
 //     OpenGLVersionMajor:  Major number of the desired minimum OpenGL version.
 //     OpenGLVersionMinor:  Minor number of the desired minimum OpenGL version.
 //     OpenGLForwardCompat: Specify whether the OpenGL context should be
@@ -74,27 +74,27 @@ func OpenWindowHint(target, hint int) { C.glfwOpenWindowHint(C.int(target), C.in
 // normally restricted to the video mode of the desktop.
 //
 // Note: For additional control of window properties, see glfw.OpenWindowHint.
-// 
+//
 //     width:   The width of the window. If width is zero, it will be calculated
 //              as width = 4/3 height, if height is not zero. If both width and
 //              height are zero, width will be set to 640.
-//     
+//
 //     height:  The height of the window. If height is zero, it will be calculated
 //              as height = 4/3 width, if width is not zero. If both width and
 //              height are zero, height will be set to 480.
-//     
+//
 //     r, g, b: The number of bits to use for each color component of the color
 //              buffer (0 means default color depth). For instance, setting
 //              r=5, g=6 and b=5 will create a 16-bit color buffer, if possible.
-//              
+//
 //     a:       The number of bits to use for the alpha channel of the color
 //              buffer (0 means no alpha channel).
-//     
+//
 //     depth:   The number of bits to use for the depth buffer (0 means no depth buffer).
-//     
+//
 //     stencil: The number of bits to use for the stencil buffer (0 means no
 //              stencil buffer).
-//      
+//
 //     mode:    Selects which type of OpenGL window to use. Mode must be either
 //              glfw.Windowed, which will generate a normal desktop window, or
 //              glfw.Fullscreen, which will generate a window that covers the
@@ -146,7 +146,7 @@ func RestoreWindow() { C.glfwRestoreWindow() }
 //     WindowNoResize: GL_TRUE if the window cannot be resized by the user, else GL_FALSE.
 //     FsaaSamples:    Number of multisampling buffer samples. Zero indicated
 //                     multisampling is disabled.
-//     
+//
 //     OpenGLVersionMajor:  Major number of the actual version of the context.
 //     OpenGLVersionMinor:  Minor number of the actual version of the context.
 //     OpenGLForwardCompat: GL_TRUE if the context is forward-compatible, else GL_FALSE.
@@ -212,7 +212,7 @@ func SwapBuffers() { C.glfwSwapBuffers() }
 // and mouse states are updated. If any related callback functions are
 // registered, these are called during the call to glfw.PollEvents.
 //
-// Note: glfw.PollEvents is called implicitly from glfw.SwapBuffers if 
+// Note: glfw.PollEvents is called implicitly from glfw.SwapBuffers if
 // glfw.AutoPollEvents is enabled (as it is by default). Thus, if glfw.SwapBuffers
 // is called frequently, which is normally the case, there is no need to call
 // glfw.PollEvents.
@@ -232,7 +232,7 @@ func WaitEvents() { C.glfwWaitEvents() }
 
 // Key returns glfw.KeyPress if the given key is held down, or glfw.KeyRelease
 // otherwise.
-// 
+//
 // Note: Not all key codes are supported on all systems. Also, while some keys
 // are available on some keyboard layouts, they may not be available on other
 // keyboard layouts.
@@ -284,7 +284,7 @@ func JoystickParam(joy, param int) int { return int(C.glfwGetJoystickParam(C.int
 // Note: If len(axes) exceeds the number of axes supported by the joystick, or if
 // the joystick is not available, the unused elements in the pos array will be
 // set to 0.0 (zero).
-// 
+//
 // Note: The function returns the number of actually returned axes. This is
 // the minimum of len(axes) and the number of axes supported by the joystick.
 // If the joystick is not supported or connected, the function will return 0 (zero).
@@ -398,7 +398,7 @@ func DesktopMode() *VidMode {
 	return vidModeFromPtr(&vm)
 }
 
-// ExtensionSupported does a string search in the list of supported OpenGL 
+// ExtensionSupported does a string search in the list of supported OpenGL
 // extensions to find if the specified extension is listed.
 //
 // Note: An OpenGL context must be created before this function can be called.
