@@ -183,7 +183,7 @@ const (
 	OpenGLCompatProfile
 )
 
-// glfwEnable/glfwDisable tokens 
+// glfwEnable/glfwDisable tokens
 const (
 	_ = 0x00030000 + iota
 	MouseCursor
@@ -201,7 +201,7 @@ const (
 	NoWait
 )
 
-// glfwGetJoystickParam tokens 
+// glfwGetJoystickParam tokens
 const (
 	_ = 0x00050000 + iota
 	Present
@@ -209,7 +209,7 @@ const (
 	Buttons
 )
 
-// glfwReadImage/glfwLoadTexture2D flags 
+// glfwReadImage/glfwLoadTexture2D flags
 const (
 	NoRescaleBit = 1 << iota // Only for glfwReadImage
 	OriginUlBit
