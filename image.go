@@ -125,7 +125,7 @@ func ReadMemoryImage(data []byte, flags int) (i *Image, err error) {
 	return
 }
 
-// LoadTextureImage2D uploads the image specified by the parameter img to 
+// LoadTextureImage2D uploads the image specified by the parameter img to
 // OpenGL texture memory (using the glTexImage2D function).
 //
 // Note: If the glfw.BuildMipmapsBit flag is set, all mipmap levels for the
