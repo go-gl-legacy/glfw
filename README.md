@@ -20,7 +20,7 @@ Callback functions are working.
 ### Dependencies
 
 * [libglfw](http://www.glfw.org/download.html)
- 
+
 _Important_: libglfw builds/installs itself as a static library by default.
 This does not work well with go. Eventhough the building of this package may succeed
 without problems, any application you use it in will likely throw up a range
@@ -31,7 +31,7 @@ do this.
 
 ### Usage
 
-    go get github.com/go-gl/glfw
+    go get github.com/go-gl-legacy/glfw/v2.7/glfw
 
 
 ### License

@@ -4,7 +4,7 @@ install:
   - wget -q https://raw.github.com/go-gl/testutils/master/travis-helper-functions.sh
   - source travis-helper-functions.sh
   - initialize
-  - subtest-init go-gl/glfw go-gl/examples
+  - subtest-init go-gl-legacy/glfw go-gl/examples
 
 script:
   - go build -v
@@ -12,7 +12,7 @@ script:
 after_script:
   - go test -v
   - upload-to-imgur
-  - subtest go-gl/glfw go-gl/examples
+  - subtest go-gl-legacy/glfw go-gl/examples
 
 after_failure: failure
 after_error: failure
